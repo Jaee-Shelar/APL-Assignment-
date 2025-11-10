@@ -1,0 +1,14 @@
+// Import the 'fs' module
+const fs = require('fs');
+
+// Data to be written into the file
+const content = 'Hello, this text is written using Node.js File System module!';
+
+// Write file asynchronously
+fs.writeFile('output.txt', content, 'utf8', (err) => {
+  if (err) {
+    console.error('Error writing to file:', err);
+    return;
+  }
+  console.log('✅ File has been written successfully!');
+});
