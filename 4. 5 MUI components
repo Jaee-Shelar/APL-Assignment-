@@ -1,0 +1,77 @@
+import React from "react";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  TextField,
+  Card,
+  CardContent,
+  Avatar,
+} from "@mui/material";
+import { blue } from "@mui/material/colors";
+
+function App() {
+  return (
+    <div style={{ fontFamily: "Arial, sans-serif" }}>
+      {/* 1️⃣ AppBar */}
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6" sx={{ flexGrow: 1 }}>
+            My MUI Demo
+          </Typography>
+          <Button color="inherit">Login</Button>
+        </Toolbar>
+      </AppBar>
+
+      <div style={{ padding: "30px", textAlign: "center" }}>
+        {/* 2️⃣ Avatar */}
+        <Avatar
+          sx={{
+            bgcolor: blue[500],
+            width: 80,
+            height: 80,
+            margin: "20px auto",
+          }}
+        >
+          JS
+        </Avatar>
+
+        {/* 3️⃣ TextField */}
+        <TextField
+          label="Enter Your Name"
+          variant="outlined"
+          sx={{ width: "250px", marginBottom: "20px" }}
+        />
+
+        <br />
+
+        {/* 4️⃣ Button */}
+        <Button variant="contained" color="primary">
+          Submit
+        </Button>
+
+        {/* 5️⃣ Card */}
+        <Card
+          sx={{
+            width: 300,
+            margin: "40px auto",
+            boxShadow: 3,
+            borderRadius: "10px",
+          }}
+        >
+          <CardContent>
+            <Typography variant="h6" gutterBottom>
+              React MUI Card
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              This is a simple Material-UI Card component example.
+            </Typography>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  );
+}
+
+export default App;
