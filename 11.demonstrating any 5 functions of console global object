@@ -1,0 +1,28 @@
+// Demonstrating 5 useful console functions
+
+// 1️⃣ console.log() — Print normal output
+console.log("1️⃣ console.log(): Used for general output");
+console.log("Hello, this is a normal message.");
+
+// 2️⃣ console.error() — Print error messages
+console.error("\n2️⃣ console.error(): Used for error messages");
+console.error("Error: Something went wrong!");
+
+// 3️⃣ console.warn() — Print warning messages
+console.warn("\n3️⃣ console.warn(): Used for warnings");
+console.warn("Warning: This action is not recommended!");
+
+// 4️⃣ console.table() — Display tabular data neatly
+console.log("\n4️⃣ console.table(): Displays data in a table format");
+const students = [
+  { name: "Aarav", age: 20, grade: "A" },
+  { name: "Meera", age: 21, grade: "B" },
+  { name: "Raj", age: 22, grade: "A+" },
+];
+console.table(students);
+
+// 5️⃣ console.time() and console.timeEnd() — Measure code execution time
+console.log("\n5️⃣ console.time() & console.timeEnd(): Measure execution time");
+console.time("Loop Time");
+for (let i = 0; i < 1e6; i++) {} // simple loop
+console.timeEnd("Loop Time");
