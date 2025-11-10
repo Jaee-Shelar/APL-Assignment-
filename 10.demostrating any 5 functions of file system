@@ -1,0 +1,47 @@
+// Import the File System module
+const fs = require('fs');
+
+// 1️⃣ writeFile() → Create or overwrite a file
+fs.writeFile('example.txt', 'Hello from Node.js File System!', 'utf8', (err) => {
+  if (err) {
+    console.error('Error writing file:', err);
+    return;
+  }
+  console.log('1️⃣ File created and written successfully!');
+
+  // 2️⃣ appendFile() → Add more data to the same file
+  fs.appendFile('example.txt', '\nThis line was appended later.', 'utf8', (err) => {
+    if (err) {
+      console.error('Error appending file:', err);
+      return;
+    }
+    console.log('2️⃣ Data appended successfully!');
+
+    // 3️⃣ readFile() → Read the file content
+    fs.readFile('example.txt', 'utf8', (err, data) => {
+      if (err) {
+        console.error('Error reading file:', err);
+        return;
+      }
+      console.log('3️⃣ File contents:\n', data);
+
+      // 4️⃣ rename() → Rename the file
+      fs.rename('example.txt', 'newExample.txt', (err) => {
+        if (err) {
+          console.error('Error renaming file:', err);
+          return;
+        }
+        console.log('4️⃣ File renamed to newExample.txt');
+
+        // 5️⃣ unlink() → Delete the file
+        fs.unlink('newExample.txt', (err) => {
+          if (err) {
+            console.error('Error deleting file:', err);
+            return;
+          }
+          console.log('5️⃣ File deleted successfully!');
+        });
+      });
+    });
+  });
+});
